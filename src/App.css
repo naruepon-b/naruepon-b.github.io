@@ -1,3 +1,17 @@
+body {
+  background-image: url("./images/wave.svg");
+  background-repeat: no-repeat;
+}
+
+@media print {
+  @page {
+    size: 1368px 1934px;
+  }
+  body {
+    print-color-adjust: exact;
+  }
+}
+
 .App {
   text-align: center;
 }
@@ -35,4 +49,50 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
+
+.borderRightDivider {
+  position: relative;
+}
+
+.borderRightDivider::before {
+  position: absolute;
+  content: "";
+  right: 0;
+  top: 16px;
+  bottom: 16px;
+  width: 2px;
+  background: linear-gradient(0deg, transparent 20%, #90a4ae 80%);
+}
+
+.sectionHeader {
+  position: relative;
+}
+
+.sectionHeader::before {
+  position: absolute;
+  content: "";
+  right: 0;
+  top: 24px;
+  width: 100px;
+  height: 1px;
+  background: linear-gradient(30deg, transparent, #d5e5fb);
+  z-index: 0;
+}
+
+.sectionHeader::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  width: 6px;
+  height: 50px;
+  border-left: 1px solid #bdbdbd;
+  background-color: #d5e5fb;
 }
