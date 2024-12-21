@@ -6,7 +6,7 @@ import Avatar from "@mui/material/Avatar";
 import { FormControlLabel, FormGroup, useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/system";
 import MaterialUISwitch from "./components/MaterialUISwitch";
-import QrCodeIcon from "@mui/icons-material/QrCode";
+import GitHubIcon from "@mui/icons-material/GitHub";
 import { blueGrey } from "@mui/material/colors";
 
 import Layout from "./components/Layout";
@@ -106,15 +106,21 @@ function App() {
                     width: 150,
                     height: 150,
                     border: `1px solid ${blueGrey[100]}`,
+                    "& img": {
+                      transform: "scale(1.15)",
+                    },
                   }}
                   src={`https://chart.googleapis.com/chart?cht=qr&chs=200x200&chl=${encodeURIComponent(
                     "https://naruepon-b.github.io"
                   )}`}
                 />
               </Box>
-              <Box textAlign="center" sx={{ color: blueGrey[300] }}>
-                <QrCodeIcon sx={{ verticalAlign: "middle" }} />
-                Resume
+              <Box
+                textAlign="center"
+                sx={{ color: blueGrey[300], padding: "4px" }}
+              >
+                <GitHubIcon sx={{ verticalAlign: "middle", mr: 1 }} />
+                GitHub
               </Box>
             </Box>
           </Grid>

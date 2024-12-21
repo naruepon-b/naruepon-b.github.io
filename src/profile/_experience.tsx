@@ -17,20 +17,22 @@ import Avatar from "@mui/material/Avatar";
 // import { useThemeContext } from "../ThemeContext";
 
 import work from "../images/program.png";
-import otopQrcode from "../images/otopQrcode.png";
+import line from "../images/line.png";
+import website from "../images/website.png";
 
 const exp = [
   {
     label: "๑ตำบล ๑ผลิตภัณฑ์",
     description: "ไลน์เว็บแอพ",
     duration: "2022",
-    img: otopQrcode,
+    icon: line,
     link: "https://liff.line.me/1645278921-kWRPP32q/?accountId=675syrgx",
   },
   {
     label: "taxi2thailand.com",
     description: "เว็บรับส่งนักท่องเที่ยว",
     duration: "2021",
+    icon: website,
     link: "https://taxi2thailand.com",
   },
 ];
@@ -71,31 +73,18 @@ export default function Education() {
                 </Typography>
               </StepLabel>
               <StepContent>
-                {step.img !== undefined ? (
-                  <Button href={step.link} target="_blank">
-                    <Avatar
-                      src={step.img}
-                      variant="rounded"
-                      sx={{
-                        width: 150,
-                        height: 150,
-                        border: `1px solid ${blueGrey[200]}`,
-                      }}
-                    />
-                  </Button>
-                ) : (
-                  <Button
-                    variant="contained"
-                    size="small"
-                    endIcon={<OpenInNewIcon />}
-                    sx={{ borderRadius: 20 }}
-                    color="info"
-                    target="_blank"
-                    href={step.link}
-                  >
-                    เปิดดู
-                  </Button>
-                )}
+                <Button
+                  variant="text"
+                  // size="small"
+                  startIcon={<Avatar variant="square" src={step.icon} />}
+                  endIcon={<OpenInNewIcon />}
+                  sx={{ borderRadius: 20 }}
+                  color="info"
+                  target="_blank"
+                  href={step.link}
+                >
+                  {step.label}
+                </Button>
               </StepContent>
             </Step>
           ))}
